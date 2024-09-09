@@ -1,0 +1,44 @@
+:root {
+  --main-color: #b38d25;
+}
+
+.banner_item_content {
+  display: flex;
+  align-items: center;
+  gap: 1rem;
+}
+
+.banner_item_content > div {
+  width: calc(50% - 0.5rem);
+}
+
+.banner_slider {
+  background: rgb(223, 205, 138);
+  background: linear-gradient(
+    90deg,
+    rgba(223, 205, 138, 1) 0%,
+    rgba(179, 141, 37, 1) 100%
+  );
+}
+
+.banner_item_content h2 {
+  font-size: 1.5rem;
+}
+.banner_item_content a {
+  color: white;
+  border: 1px solid white;
+  padding: 0.5rem 2rem;
+  display: block;
+  font-size: 0.95rem;
+
+  transition: 0.25s linear;
+}
+
+.banner_item_content a:hover {
+  background-color: white;
+  color: var(--main-color);
+}
+
+.banner_item_content img {
+  width: 100%;
+}
