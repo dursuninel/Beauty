@@ -36,3 +36,39 @@ lightGallery(document.getElementById("lightgallery"), {
   plugins: [lgZoom, lgThumbnail],
   speed: 500,
 });
+
+
+$(".header-logo img").on("dragstart", function (event) {
+  event.preventDefault();
+});
+
+$(".menuToggle, .overlay-header").on("click", function () {
+  $("header .header-nav").toggleClass("active");
+  $(".header-flex").toggleClass("active");
+
+  setTimeout(() => {
+      if ($(".header-flex").hasClass("active")) {
+          $(".header-flex input").prop("checked", true);
+          $(".out-check").css("opacity", "0");
+          $(".out-check").hide(250);
+          $(".inner-check").css("opacity", "1");
+          $(".inner-check").show(250);
+          $("body").css("overflow-y", "hidden")
+      } else {
+          $(".header-flex input").prop("checked", false);
+          $(".out-check").css("opacity", "1");
+          $(".out-check").show(250);
+          $(".inner-check").css("opacity", "0");
+          $(".inner-check").hide(250);
+          $("body").css("overflow-y", "auto")
+      }
+  },
+      1);
+});
+
+$(".header-nav > ul.navigation-list > li:last-child > a").on(
+  "click",
+  function () {
+      $(this).closest("li").toggleClass("active");
+  }
+);
